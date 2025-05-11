@@ -92,7 +92,7 @@ class CAME(torch.optim.Optimizer):
 
                 factored = self._get_options(grad_shape)
                 # State Initialization
-                if len(state) == 0:
+                if 'step' not in state:
                     state["step"] = 0
 
                     state["exp_avg"] = torch.zeros_like(grad)
